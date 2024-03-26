@@ -2,7 +2,7 @@
 
 (The site is still under construction. For the moment, only the interface works, but it's not yet automated).
 
-![./src/preview/1-1-2alpha.png](preview112alpha)
+![https://github.com/kerogs/Sword-Master-Story---Dashboard/blob/main/src/preview/1-1-2alpha.png](preview112alpha)
 
 This site is called SMS3 and is an improved version of a small project I had done for myself. I decided to improve the interface and add some features to make it more interesting, and I decided to share it if anyone would like to use the little site for themselves or on a server of their own.
 
