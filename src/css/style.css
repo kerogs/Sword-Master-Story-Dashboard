@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0c0b19;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  width: 70vw;
+  margin: 40px auto;
+  display: flex;
+}
+
+.ccenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 0.7rem;
+  width: 219px;
+}
+.nav ul {
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+.nav ul hr {
+  border: 1px solid #5650ca;
+  margin: 25px 0;
+}
+.nav ul a {
+  text-decoration: none;
+}
+.nav ul a li {
+  color: #e7e7f3;
+}
+.nav ul a li.list {
+  position: relative;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  border-radius: 0.75rem;
+  padding: 6px 0;
+  border: 3px solid rgba(255, 255, 255, 0.03);
+  transition: 0.2s;
+  margin: 15px 0;
+  opacity: 0.8;
+}
+.nav ul a li.list:hover {
+  color: #fff;
+  opacity: 1;
+  border: 3px solid #2e2a79;
+}
+.nav ul a li.list.active {
+  background-color: #2e2a79;
+  opacity: 1;
+  border: 3px solid rgba(255, 255, 255, 0.03);
+}
+.nav ul a li.list svg {
+  fill: invert(36%) sepia(16%) saturate(6301%) hue-rotate(225deg) brightness(82%) contrast(91%);
+  margin: 0 7px 0 10px;
+  transform: translateY(-1px);
+}
+.nav ul a li.list svg.linkext {
+  position: absolute;
+  right: 5px;
+  width: 14px;
+}
+
+.content {
+  flex: 1;
+  margin: 0 0 0 20px;
+}
+.content .main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas: "last-discount total-discountNotClaim last-discountUsed total-discountUsed" "last-discount last-update last-update last-update" "info info total total";
+}
+.content .main-grid > div {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 0.73rem;
+  padding: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+.content .main-grid > div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.content .main-grid > div.imp {
+  background-color: rgba(46, 42, 121, 0.3);
+}
+.content .main-grid > div .name {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #e7e7f3;
+}
+.content .main-grid > div .name svg {
+  margin-left: 7px;
+  transform: translateY(1px);
+}
+.content .main-grid > div .footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #ccc;
+  font-size: 13px;
+}
+.content .main-grid .last-discountUsed {
+  grid-area: last-discountUsed;
+}
+.content .main-grid .last-discountUsed .ccenter {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  color: #ca5050;
+  cursor: default;
+  transition: 0.4s;
+}
+.content .main-grid .last-discountUsed .ccenter:hover p {
+  animation: 0.8s refused forwards;
+}
+.content .main-grid .last-discount {
+  grid-area: last-discount;
+}
+.content .main-grid .last-discount ul {
+  padding-left: 0;
+  list-style: none;
+}
+.content .main-grid .last-discount ul li {
+  opacity: 0.8;
+  margin: 10px 0;
+  color: #e7e7f3;
+  transition: 0.4s;
+  border-left: 0px solid #5650ca;
+}
+.content .main-grid .last-discount ul li:first-child {
+  margin: 30px 0 10px 0;
+}
+.content .main-grid .last-discount ul li span.date {
+  font-size: 10px;
+  color: #ccc;
+  cursor: default;
+}
+.content .main-grid .last-discount ul li:hover {
+  border-left: 10px solid #5650ca;
+  padding-left: 10px;
+  opacity: 1;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+.content .main-grid .last-update {
+  grid-area: last-update;
+  cursor: default;
+  padding: 0px;
+  background-position: center;
+  background-size: cover;
+}
+.content .main-grid .last-update > .filter {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(to right, #0c0b19, rgba(255, 255, 255, 0));
+  border-radius: 0.3rem;
+}
+.content .main-grid .last-update .img {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+}
+.content .main-grid .last-update .img img {
+  max-height: 233px;
+  max-width: 390px;
+  transition: 0.5s;
+  transform: translateY(7px);
+  z-index: 98;
+}
+.content .main-grid .last-update .ccenter {
+  width: 90%;
+  color: #e7e7f3;
+  transition: 0.4s;
+}
+.content .main-grid .last-update .ccenter h3 {
+  color: #5650ca;
+}
+.content .main-grid .last-update .ccenter p {
+  transition: 0.4s;
+  font-size: 16px;
+}
+.content .main-grid .last-update:hover .img img {
+  max-height: 270px;
+  max-width: 430px;
+}
+.content .main-grid .last-update:hover > .filter .ccenter {
+  margin-left: 10px;
+}
+.content .main-grid .last-update:hover > .filter .ccenter p {
+  font-size: 20px;
+}
+.content .main-grid .total-discountUsed {
+  grid-area: total-discountUsed;
+}
+.content .main-grid .total-discountUsed .ccenter {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  color: #50ca5a;
+  cursor: default;
+  transition: 0.4s;
+}
+.content .main-grid .total-discountUsed .ccenter:hover p {
+  animation: 0.8s refused forwards;
+}
+.content .main-grid .total-discountNotClaim {
+  overflow: hidden;
+  padding: 0;
+  grid-area: total-discountNotClaim;
+}
+.content .main-grid .total-discountNotClaim h3 {
+  color: #e7e7f3;
+  text-align: center;
+  margin: 15px 0;
+}
+.content .main-grid .total-discountNotClaim .ccenter {
+  width: 90%;
+  color: #e7e7f3;
+  text-align: center;
+}
+.content .main-grid .total {
+  grid-area: total;
+}
+.content .main-grid .total .ccenter {
+  width: 100%;
+  text-align: center;
+}
+.content .main-grid .total .number {
+  color: #9d9ad7;
+  font-size: 4em;
+  text-transform: uppercase;
+}
+.content .main-grid .info {
+  grid-area: info;
+}
+.content .main-grid .info .ccenter {
+  width: 100%;
+  text-align: center;
+}
+.content .main-grid .info .number {
+  color: #9d9ad7;
+  font-size: 4em;
+  text-transform: uppercase;
+  color: #50ca5a;
+}
+
+@keyframes refused {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.creator {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ccc;
+}
+.creator .blue {
+  color: #5066ca;
+}
+.creator .red {
+  color: #ca5050;
+}
+.creator a {
+  color: #ccc;
+}
+.creator a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */

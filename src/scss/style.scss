@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$text: #e7e7f3;
+$background: #0c0b19;
+$backgroundalt: rgba(255, 255, 255, 0.03);
+$primary: #9d9ad7;
+$secondary: #2e2a79;
+$accent: #5650ca;
+$accentFill: invert(36%) sepia(16%) saturate(6301%) hue-rotate(225deg) brightness(82%) contrast(91%);
+
+$l-text: #0c0c18;
+$l-background: #e7e6f4;
+$l-primary: #2c2966;
+$l-secondary: #8a86d5;
+$l-accent: #3b35b1;
+$l-accentFill: invert(22%) sepia(16%) saturate(6231%) hue-rotate(225deg) brightness(107%) contrast(109%);
+
+$green: #50ca5a;
+$red: #ca5050;
+$orange: #ca8150;
+$blue : #5066ca;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $background;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    width: 70vw;
+    margin: 40px auto;
+    display: flex;
+}
+
+.ccenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav {
+    position: relative;
+    background-color: $backgroundalt;
+    padding: 20px;
+    border-radius: 0.7rem;
+    width: 219px;
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+        text-align: center;
+
+        hr {
+            border: 1px solid $accent;
+            margin: 25px 0;
+        }
+
+        a {
+            text-decoration: none;
+
+            li {
+                color: $text;
+
+                &.list {
+                    position: relative;
+                    font-size: 1.2em;
+                    display: flex;
+                    align-items: center;
+                    // justify-content:center;
+                    border-radius: 0.75rem;
+                    padding: 6px 0;
+                    border: 3px solid $backgroundalt;
+                    transition: 0.2s;
+                    margin: 15px 0;
+                    opacity: 0.8;
+
+                    &:hover {
+                        // background-color: $secondary;
+                        color: #fff;
+                        opacity: 1;
+                        border: 3px solid $secondary;
+                    }
+
+                    &.active {
+                        background-color: $secondary;
+                        opacity: 1;
+                        border: 3px solid $backgroundalt;
+                    }
+
+                    svg {
+                        fill: $accentFill;
+                        margin: 0 7px 0 10px;
+                        transform: translateY(-1px);
+
+                        &.linkext {
+                            position: absolute;
+                            right: 5px;
+                            width: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content {
+    flex: 1;
+    // background-color: red;
+    margin: 0 0 0 20px;
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "last-discount total-discountNotClaim last-discountUsed total-discountUsed"
+            "last-discount last-update last-update last-update"
+            "info info total total";
+
+        > div {
+            background-color: $backgroundalt;
+            border-radius: 0.73rem;
+            padding: 20px;
+            position: relative;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            &.imp {
+                background-color: rgba(46, 42, 121, 0.3);
+            }
+
+            .name {
+                display: flex;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                color: $text;
+
+                svg {
+                    margin-left: 7px;
+                    transform: translateY(1px);
+                }
+            }
+
+            .footer {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                color: #ccc;
+                font-size: 13px;
+            }
+        }
+
+        .last-discountUsed {
+            grid-area: last-discountUsed;
+
+            .ccenter {
+                width: 100%;
+                text-align: center;
+                font-size: 2em;
+                // color: $text;
+                color: $red;
+                cursor: default;
+                transition: 0.4s;
+
+                &:hover p {
+                    animation: 0.8s refused forwards;
+                }
+            }
+        }
+
+        .last-discount {
+            grid-area: last-discount;
+
+            ul {
+                padding-left: 0;
+                list-style: none;
+                li {
+                    opacity: 0.8;
+                    &:first-child {
+                        margin: 30px 0 10px 0;
+                    }
+                    margin: 10px 0;
+                    color: $text;
+                    transition: 0.4s;
+                    border-left: 0px solid $accent;
+
+                    span.date {
+                        font-size: 10px;
+                        color: #ccc;
+                        cursor: default;
+                    }
+
+                    &:hover {
+                        border-left: 10px solid $accent;
+                        padding-left: 10px;
+                        opacity: 1;
+                        color: #fff;
+                        background-color: $backgroundalt;
+                    }
+                }
+            }
+        }
+
+        .last-update {
+            grid-area: last-update;
+
+            cursor: default;
+
+            padding: 0px;
+
+            background-position: center;
+            background-size: cover;
+            
+            > .filter {
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(8px);
+                background: linear-gradient(to right, #0c0b19, #ffffff00);
+                border-radius: .30rem;
+            }
+
+            .img {
+                position: absolute;
+                bottom: 0;
+                right: 0px;
+
+                img {
+                    max-height: 233px;
+                    max-width: 390px;
+                    transition: 0.5s;
+                    transform: translateY(7px);
+                    z-index: 98;
+                }
+            }
+
+            .ccenter {
+                width: 90%;
+                color: $text;
+                transition: 0.4s;
+                h3 {
+                    color: $accent;
+                }
+                p {
+                    transition: 0.4s;
+                    font-size: 16px;
+
+                }
+            }
+
+            &:hover {
+                .img {
+                    img {
+                        max-height: 270px;
+                        max-width: 430px;
+                    }
+                }
+
+                > .filter .ccenter {
+                    margin-left: 10px;
+
+                    p {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .total-discountUsed {
+            grid-area: total-discountUsed;
+
+            .ccenter {
+                width: 100%;
+                text-align: center;
+                font-size: 2em;
+                // color: $text;
+                color: $green;
+                cursor: default;
+                transition: 0.4s;
+
+                &:hover p {
+                    animation: 0.8s refused forwards;
+                }
+            }
+        }
+
+        .total-discountNotClaim {
+            overflow: hidden;
+            padding: 0;
+            grid-area: total-discountNotClaim;
+
+            h3{
+                color: $text;
+                text-align: center;
+                margin: 15px 0;
+            }
+
+            .ccenter{
+                width: 90%;
+                // height: 90%;
+
+                color: $text;
+                text-align: center;
+            }
+        }
+
+        .total {
+            grid-area: total;
+
+            .ccenter {
+                width: 100%;
+                text-align: center;
+            }
+
+            .number {
+                color: $primary;
+                font-size: 4em;
+                text-transform: uppercase;
+            }
+        }
+
+        .info {
+            grid-area: info;
+
+            .ccenter {
+                width: 100%;
+                text-align: center;
+            }
+
+            .number {
+                color: $primary;
+                font-size: 4em;
+                text-transform: uppercase;
+                color: $green;
+            }
+        }
+    }
+}
+
+@keyframes refused {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-15deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.creator{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ccc;
+
+    .blue{
+        color: $blue;
+    }
+
+    .red{
+        color: $red;
+    }
+
+    a{
+        color: #ccc;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
