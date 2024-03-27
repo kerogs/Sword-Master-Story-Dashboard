@@ -1,6 +1,6 @@
 # Sword Master Story Dashboard
 
-(The site is still under construction. For the moment, only the interface works, but it's not yet automated).
+(The site is still under construction. For the moment, it's half automated).
 
 ![blol](https://raw.githubusercontent.com/kerogs/Sword-Master-Story---Dashboard/main/src/preview/1-1-2-alpha.png)
 
