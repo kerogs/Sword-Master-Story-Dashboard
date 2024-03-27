@@ -122,8 +122,8 @@ main {
         gap: 10px 10px;
         grid-auto-flow: row;
         grid-template-areas:
-            "last-discount total-discountNotClaim last-discountUsed total-discountUsed"
-            "last-discount last-update last-update last-update"
+            "last-coupon total-couponNotClaim last-couponUsed total-couponUsed"
+            "last-coupon last-update last-update last-update"
             "info info total total";
 
         > div {
@@ -163,8 +163,8 @@ main {
             }
         }
 
-        .last-discountUsed {
-            grid-area: last-discountUsed;
+        .last-couponUsed {
+            grid-area: last-couponUsed;
 
             .ccenter {
                 width: 100%;
@@ -181,8 +181,8 @@ main {
             }
         }
 
-        .last-discount {
-            grid-area: last-discount;
+        .last-coupon {
+            grid-area: last-coupon;
 
             ul {
                 padding-left: 0;
@@ -278,8 +278,8 @@ main {
             }
         }
 
-        .total-discountUsed {
-            grid-area: total-discountUsed;
+        .total-couponUsed {
+            grid-area: total-couponUsed;
 
             .ccenter {
                 width: 100%;
@@ -296,10 +296,10 @@ main {
             }
         }
 
-        .total-discountNotClaim {
+        .total-couponNotClaim {
             overflow: hidden;
             padding: 0;
-            grid-area: total-discountNotClaim;
+            grid-area: total-couponNotClaim;
 
             h3{
                 color: $text;
@@ -386,4 +386,17 @@ main {
             text-decoration: underline;
         }
     }
+}
+
+.playerToken{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: $text;
+    opacity: .2;
+}
+
+.claimed{
+    opacity: .2 !important;
+    color: #ccc;
 }

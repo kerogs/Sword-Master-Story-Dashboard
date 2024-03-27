@@ -88,7 +88,7 @@ main {
   grid-template-rows: 1fr 1fr 1fr;
   gap: 10px 10px;
   grid-auto-flow: row;
-  grid-template-areas: "last-discount total-discountNotClaim last-discountUsed total-discountUsed" "last-discount last-update last-update last-update" "info info total total";
+  grid-template-areas: "last-coupon total-couponNotClaim last-couponUsed total-couponUsed" "last-coupon last-update last-update last-update" "info info total total";
 }
 .content .main-grid > div {
   background-color: rgba(255, 255, 255, 0.03);
@@ -121,10 +121,10 @@ main {
   color: #ccc;
   font-size: 13px;
 }
-.content .main-grid .last-discountUsed {
-  grid-area: last-discountUsed;
+.content .main-grid .last-couponUsed {
+  grid-area: last-couponUsed;
 }
-.content .main-grid .last-discountUsed .ccenter {
+.content .main-grid .last-couponUsed .ccenter {
   width: 100%;
   text-align: center;
   font-size: 2em;
@@ -132,32 +132,32 @@ main {
   cursor: default;
   transition: 0.4s;
 }
-.content .main-grid .last-discountUsed .ccenter:hover p {
+.content .main-grid .last-couponUsed .ccenter:hover p {
   animation: 0.8s refused forwards;
 }
-.content .main-grid .last-discount {
-  grid-area: last-discount;
+.content .main-grid .last-coupon {
+  grid-area: last-coupon;
 }
-.content .main-grid .last-discount ul {
+.content .main-grid .last-coupon ul {
   padding-left: 0;
   list-style: none;
 }
-.content .main-grid .last-discount ul li {
+.content .main-grid .last-coupon ul li {
   opacity: 0.8;
   margin: 10px 0;
   color: #e7e7f3;
   transition: 0.4s;
   border-left: 0px solid #5650ca;
 }
-.content .main-grid .last-discount ul li:first-child {
+.content .main-grid .last-coupon ul li:first-child {
   margin: 30px 0 10px 0;
 }
-.content .main-grid .last-discount ul li span.date {
+.content .main-grid .last-coupon ul li span.date {
   font-size: 10px;
   color: #ccc;
   cursor: default;
 }
-.content .main-grid .last-discount ul li:hover {
+.content .main-grid .last-coupon ul li:hover {
   border-left: 10px solid #5650ca;
   padding-left: 10px;
   opacity: 1;
@@ -212,10 +212,10 @@ main {
 .content .main-grid .last-update:hover > .filter .ccenter p {
   font-size: 20px;
 }
-.content .main-grid .total-discountUsed {
-  grid-area: total-discountUsed;
+.content .main-grid .total-couponUsed {
+  grid-area: total-couponUsed;
 }
-.content .main-grid .total-discountUsed .ccenter {
+.content .main-grid .total-couponUsed .ccenter {
   width: 100%;
   text-align: center;
   font-size: 2em;
@@ -223,20 +223,20 @@ main {
   cursor: default;
   transition: 0.4s;
 }
-.content .main-grid .total-discountUsed .ccenter:hover p {
+.content .main-grid .total-couponUsed .ccenter:hover p {
   animation: 0.8s refused forwards;
 }
-.content .main-grid .total-discountNotClaim {
+.content .main-grid .total-couponNotClaim {
   overflow: hidden;
   padding: 0;
-  grid-area: total-discountNotClaim;
+  grid-area: total-couponNotClaim;
 }
-.content .main-grid .total-discountNotClaim h3 {
+.content .main-grid .total-couponNotClaim h3 {
   color: #e7e7f3;
   text-align: center;
   margin: 15px 0;
 }
-.content .main-grid .total-discountNotClaim .ccenter {
+.content .main-grid .total-couponNotClaim .ccenter {
   width: 90%;
   color: #e7e7f3;
   text-align: center;
@@ -300,4 +300,17 @@ main {
 }
 .creator a:hover {
   text-decoration: underline;
+}
+
+.playerToken {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: #e7e7f3;
+  opacity: 0.2;
+}
+
+.claimed {
+  opacity: 0.2 !important;
+  color: #ccc;
 }/*# sourceMappingURL=style.css.map */
