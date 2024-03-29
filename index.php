@@ -7,8 +7,8 @@ if (file_exists($couponPath)) {
     $lastModified = filemtime($couponPath);
     $currentTime = time();
     $difference = $currentTime - $lastModified;
-    if ($difference < 900) { // 15 minutes en secondes
-        echo "Les informations ont été récupérées il y a moins de 15 minutes. Pas besoin de les récupérer à nouveau.";
+    if ($difference < 900) {
+        // echo "Les informations ont été récupérées il y a moins de 15 minutes. Pas besoin de les récupérer à nouveau.";
     } else {
         require_once './src/php/update/coupons-checker.php';
     }
@@ -17,6 +17,15 @@ if (file_exists($couponPath)) {
     $lastCouponName = $lastCoupon[0]['name'];
     $lastCouponDate = $lastCoupon[0]['expiration'];
     couponExists($lastCouponName, "./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json") ? $lastCouponClaimCheck = "claimed" : $lastCouponClaimCheck = "code";
+
+    $couponAvailableNow = 0;
+    /**
+    * ! You don't need to have more than 20 coupons, as there are usually 
+    * ! no more than 10 available at any one time.
+    */
+    foreach(extractCoupons('./data/couponList.json', 20, true) as $couponAvailable){
+        if(isDateFuture($couponAvailable['expiration']) && !couponExists($couponAvailable['name'], "./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json")) $couponAvailableNow++;
+    }
 }
 
 ?>
@@ -32,7 +41,7 @@ if (file_exists($couponPath)) {
     <?php require_once './src/php/head.php' ?>
 </head>
 
-<body>
+<body class="animation-background">
 
     <div class="playerToken"><?= $_COOKIE['sms3_token'] ?></div>
 
@@ -48,7 +57,7 @@ if (file_exists($couponPath)) {
         <!-- content -->
         <div class="content">
             <div class="main-grid">
-                <div class="last-couponUsed">
+                <div class="last-couponUsed animation-popup" style="animation-delay: .4s;">
                     <div class="name">
                         Last claim
                     </div>
@@ -57,7 +66,7 @@ if (file_exists($couponPath)) {
                         <p><?= getLastCoupon("./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json")['name'] ?></p>
                     </div>
                 </div>
-                <div class="last-coupon imp">
+                <div class="last-coupon imp animation-popup">
                     <div class="name">
                         Last coupon
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:green">
@@ -72,7 +81,11 @@ if (file_exists($couponPath)) {
                             if (couponExists($coupon['name'], "./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json")) {
                                 echo '<li><span class="claimed">' . $coupon['name'] . '</span> <span class="date">' . $coupon['description'] . '</span></li>';
                             } else {
-                                echo '<li><span data-coupon-name="' . $coupon['name'] . '" class="code">' . $coupon['name'] . '</span> <span class="date">' . $coupon['description'] . '</span></li>';
+                                if(isDateFuture($coupon['expiration'])){
+                                    echo '<li title="'.$coupon['expiration'].'"><span data-coupon-name="' . $coupon['name'] . '" class="code">' . $coupon['name'] . '</span> <span class="date">' . $coupon['description'] . '</span></li>';
+                                } else{
+                                    echo '<li title="'.$coupon['expiration'].' [expired]"><span class="expiration">' . $coupon['name'] . '</span> <span class="date">' . $coupon['description'] . '</span></li>';
+                                }
                             }
                         }
 
@@ -88,21 +101,21 @@ if (file_exists($couponPath)) {
                         <li><span class="code">KS39G!2014</span> <span class="date">13 February 2019</span></li> -->
                     </ul>
                 </div>
-                <div class="last-update" style="background-image: url('./src/img/background/SwordMaster-Story-image.png');">
+                <div class="last-update animation-slideFromRight" style="animation-delay: .7s; background-image: url('./src/img/background/<?= $currentDataArray['theme']['bannerBackground'] ?>');">
                     <div class="filter">
                         <div class="img">
-                            <img src="./src/img/character/banner_ryu.png" alt="" class="filter">
+                            <img src="./src/img/character/<?= $currentDataArray['theme']['bannerCharacter'] ?>" alt="" class="filter">
                         </div>
 
                         <div class="ccenter">
                             <h3>Last login</h3>
-                            <p>19 february 2019</p>
+                            <p><?= $lastLoginBefore ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="total-couponUsed">
+                <div class="total-couponUsed animation-popup" style="animation-delay: .6s;">
                     <div class="name">
-                        Last coupon
+                        Last available
                     </div>
 
                     <div class="ccenter">
@@ -113,35 +126,26 @@ if (file_exists($couponPath)) {
                         <?= $lastCouponDate ?>
                     </div>
                 </div>
-                <div class="total-couponNotClaim">
+                <div class="total-couponNotClaim animation-popup" style="animation-delay: .2s;">
                     <h3>Random Tips</h3>
                     <div class="ccenter">
                         <p>bingo bango bongo bish bash bosh</p>
                     </div>
                     <div class="footer">-A CSGO PRO PLAYER</div>
                 </div>
-                <div class="total">
+                <div class="total animation-popup" style="animation-delay: 1s;">
                     <div class="name">Total coupon claim</div>
                     <div class="ccenter">
-                        <p class="number"><?= countNames(file_get_contents("./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json")) ?></p>
+                        <p class="number" id="numberClaim"><?= countNames(file_get_contents("./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json")) ?></p>
                     </div>
                 </div>
-                <div class="info">
+                <div class="info animation-popup" style="animation-delay: .8s;">
                     <div class="name">Coupon available</div>
                     <div class="ccenter">
-                        <p class="number">12</p>
+                        <p class="number" id="numberAvailable"><?= $couponAvailableNow ?></p>
                     </div>
                 </div>
             </div>
-
-            <pre style="color:orange;">
-<?php
-print_r(extractCoupons('./data/couponList.json', 1, false));
-?>
-            </pre>
-            <p style="color:red">
-                <?= extractCoupons('./data/couponList.json', 1, true)[0]['name'] ?>
-            </p>
         </div>
 
     </main>
@@ -149,14 +153,17 @@ print_r(extractCoupons('./data/couponList.json', 1, false));
 </body>
 <!-- script -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const codeElements = document.querySelectorAll('.code');
+document.addEventListener('DOMContentLoaded', function() {
+    const codeElements = document.querySelectorAll('.code');
 
-        codeElements.forEach(function(codeElement) {
-            codeElement.addEventListener('click', function() {
-                if (!this.classList.contains('claimed')) {
-                    const couponName = this.getAttribute('data-coupon-name');
+    const claimedCoupons = new Set();
 
+    codeElements.forEach(function(codeElement) {
+        codeElement.addEventListener('click', function() {
+            if (!this.classList.contains('claimed')) {
+                const couponName = this.getAttribute('data-coupon-name');
+
+                if (!claimedCoupons.has(couponName)) {
                     const xhr = new XMLHttpRequest();
                     const url = `./src/php/update/coupon-claim.php?name=${couponName}`;
                     xhr.open('GET', url, true);
@@ -164,17 +171,31 @@ print_r(extractCoupons('./data/couponList.json', 1, false));
                         if (xhr.readyState === 4 && xhr.status === 200) {
                             console.log(xhr.responseText);
 
-                            codeElement.classList.add('claimed');
+                            const numberClaimElement = document.getElementById('numberClaim');
+                            const numberAvailableElement = document.getElementById('numberAvailable');
 
-                            codeElement.classList.remove('code');
+                            if (numberClaimElement && numberAvailableElement) {
+                                numberClaimElement.textContent = parseInt(numberClaimElement.textContent) + 1;
+                                numberAvailableElement.textContent = parseInt(numberAvailableElement.textContent) - 1;
+                            }
 
+                            codeElements.forEach(function(element) {
+                                if (element.getAttribute('data-coupon-name') === couponName) {
+                                    element.classList.add('claimed');
+                                    element.classList.remove('code');
+                                }
+                            });
+
+                            claimedCoupons.add(couponName);
                         }
                     };
                     xhr.send();
                 }
-            });
+            }
         });
     });
+});
+
 </script>
 
 </html>

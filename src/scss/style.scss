@@ -18,23 +18,50 @@ $l-accentFill: invert(22%) sepia(16%) saturate(6231%) hue-rotate(225deg) brightn
 $green: #50ca5a;
 $red: #ca5050;
 $orange: #ca8150;
-$blue : #5066ca;
+$blue: #5066ca;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    scrollbar-color: $accent transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $accent;
+        border-radius: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent; 
+    }
 }
 
 body {
     background: $background;
+    background-image: url('../img/wallpaper-kerogs.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     font-family: "Poppins", sans-serif;
+    height: 100vh;
 }
 
 main {
-    width: 70vw;
-    margin: 40px auto;
+    width: 80vw;
+    // margin: 40px auto;
     display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .ccenter {
@@ -114,6 +141,9 @@ main {
     flex: 1;
     // background-color: red;
     margin: 0 0 0 20px;
+    height: 85vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .main-grid {
         display: grid;
@@ -223,13 +253,13 @@ main {
 
             background-position: center;
             background-size: cover;
-            
+
             > .filter {
                 width: 100%;
                 height: 100%;
                 backdrop-filter: blur(8px);
                 background: linear-gradient(to right, #0c0b19, #ffffff00);
-                border-radius: .30rem;
+                border-radius: 0.3rem;
             }
 
             .img {
@@ -256,7 +286,6 @@ main {
                 p {
                     transition: 0.4s;
                     font-size: 16px;
-
                 }
             }
 
@@ -301,13 +330,13 @@ main {
             padding: 0;
             grid-area: total-couponNotClaim;
 
-            h3{
+            h3 {
                 color: $text;
                 text-align: center;
                 margin: 15px 0;
             }
 
-            .ccenter{
+            .ccenter {
                 width: 90%;
                 // height: 90%;
 
@@ -364,7 +393,7 @@ main {
     }
 }
 
-.creator{
+.creator {
     position: absolute;
     bottom: 5px;
     left: 0;
@@ -372,31 +401,107 @@ main {
     text-align: center;
     color: #ccc;
 
-    .blue{
+    .blue {
         color: $blue;
     }
 
-    .red{
+    .red {
         color: $red;
     }
 
-    a{
+    a {
         color: #ccc;
-        &:hover{
+        &:hover {
             text-decoration: underline;
         }
     }
 }
 
-.playerToken{
+.playerToken {
     position: absolute;
     bottom: 5px;
     right: 5px;
     color: $text;
-    opacity: .2;
+    opacity: 0.2;
 }
 
-.claimed{
-    opacity: .2 !important;
+.claimed {
+    opacity: 0.2 !important;
     color: #ccc;
 }
+
+.expiration {
+    opacity: 0.4;
+    color: $red;
+    text-decoration: line-through;
+}
+
+.content.coupon {
+    .list {
+        background-color: $backgroundalt;
+        border-radius: 0.73rem;
+        padding: 20px;
+        position: relative;
+        transition: 0.3s;
+        height: 85%;
+        display: flex;
+        overflow-y: auto;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+        flex: 1;
+
+        li {
+            display: flex;
+            color: #fff;
+            align-content: center;
+            justify-content: center;
+
+            svg {
+                margin: 0 10px 0 0;
+            }
+
+            .code,
+            .claimed,
+            .expiration {
+                margin: 0 10px;
+            }
+
+            .code {
+                color: $green;
+            }
+
+            .type-ruby {
+                color: $red;
+                fill: $red;
+            }
+            .type-stamina {
+                color: yellow;
+                fill: yellow;
+            }
+            .type-other {
+                color: $accent;
+                fill: $accent;
+            }
+        }
+    }
+
+    .stats {
+        display: flex;
+
+        &__box {
+            flex: 1;
+            text-align: center;
+            margin: 0 10px;
+            color: $text;
+            padding: 15px 0;
+            background-color: $background;
+            border-radius: 0.23rem;
+        }
+    }
+}
+
+
+@import './animation/animation';

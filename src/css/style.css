@@ -3,17 +3,38 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-color: #5650ca transparent;
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #5650ca;
+  border-radius: 0.5rem;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
 }
 
 body {
   background: #0c0b19;
+  background-image: url("../img/wallpaper-kerogs.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
 }
 
 main {
-  width: 70vw;
-  margin: 40px auto;
+  width: 80vw;
   display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .ccenter {
@@ -81,6 +102,9 @@ main {
 .content {
   flex: 1;
   margin: 0 0 0 20px;
+  height: 85vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .content .main-grid {
   display: grid;
@@ -313,4 +337,138 @@ main {
 .claimed {
   opacity: 0.2 !important;
   color: #ccc;
+}
+
+.expiration {
+  opacity: 0.4;
+  color: #ca5050;
+  text-decoration: line-through;
+}
+
+.content.coupon .list {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 0.73rem;
+  padding: 20px;
+  position: relative;
+  transition: 0.3s;
+  height: 85%;
+  display: flex;
+  overflow-y: auto;
+}
+.content.coupon ul {
+  padding-left: 0;
+  list-style: none;
+  flex: 1;
+}
+.content.coupon ul li {
+  display: flex;
+  color: #fff;
+  align-content: center;
+  justify-content: center;
+}
+.content.coupon ul li svg {
+  margin: 0 10px 0 0;
+}
+.content.coupon ul li .code,
+.content.coupon ul li .claimed,
+.content.coupon ul li .expiration {
+  margin: 0 10px;
+}
+.content.coupon ul li .code {
+  color: #50ca5a;
+}
+.content.coupon ul li .type-ruby {
+  color: #ca5050;
+  fill: #ca5050;
+}
+.content.coupon ul li .type-stamina {
+  color: yellow;
+  fill: yellow;
+}
+.content.coupon ul li .type-other {
+  color: #5650ca;
+  fill: #5650ca;
+}
+.content.coupon .stats {
+  display: flex;
+}
+.content.coupon .stats__box {
+  flex: 1;
+  text-align: center;
+  margin: 0 10px;
+  color: #e7e7f3;
+  padding: 15px 0;
+  background-color: #0c0b19;
+  border-radius: 0.23rem;
+}
+
+.animation-popup {
+  animation: 1s popup forwards;
+  opacity: 0;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animation-slideFromRight {
+  animation: 0.6s slideFromRight forwards;
+  opacity: 0;
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40%);
+  }
+  55% {
+    transform: translateX(-13px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animation-slideFromTop {
+  animation: 1s slideFromTop forwards;
+  opacity: 0;
+}
+
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  55% {
+    transform: translateY(13px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animation-background {
+  animation: 1s background forwards;
+}
+
+@keyframes background {
+  0% {
+    background-size: 110%;
+    backdrop-filter: blur(10px);
+  }
+  100% {
+    background-size: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

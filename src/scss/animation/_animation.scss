@@ -1,0 +1,73 @@
+.animation-popup{
+    animation: 1s popup forwards;
+    opacity: 0;
+}
+
+@keyframes popup{
+    0%{
+        transform: scale(.7);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(1.03);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animation-slideFromRight{
+    animation: .6s slideFromRight forwards;
+    opacity: 0;
+}
+
+@keyframes slideFromRight{
+    0%{
+        opacity: 0;
+        transform: translateX(40%);
+    }
+    55%{
+        transform: translateX(-13px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animation-slideFromTop{
+    animation: 1s slideFromTop forwards;
+    opacity: 0;
+}
+
+@keyframes slideFromTop{
+    0%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    55%{
+        transform: translateY(13px) ;
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animation-background{
+    animation: 1s background forwards;
+}
+
+@keyframes background {
+    0%{
+        background-size: 110%;
+        backdrop-filter: blur(10px);
+    }
+    100%{
+        background-size: 100%;
+    }
+}

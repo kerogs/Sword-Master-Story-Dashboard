@@ -32,7 +32,7 @@ if ($_COOKIE['sms3_token'] != true) {
         "couponClaim" => array(),
         "theme" => array(
             "style" => "dark",
-            "bannerCaracter" => "default.png",
+            "bannerCharacter" => "default.png",
             "bannerBackground" => "default.png"
         )
     );
@@ -48,7 +48,29 @@ if ($_COOKIE['sms3_token'] != true) {
 $jsonServData = file_get_contents('./data/serverData.json');
 $servData = json_decode($jsonServData, true);
 
+// ? Path to the account
 $tokenPath = "./data/account/" . $_COOKIE['sms3_token'];
+
+
+
+
+
+// ? Save last login
+$lastLoginDate = date('Y-F-d H:i:s');
+$dataToUpdate = array('lastLogin' => $lastLoginDate);
+$currentData = file_get_contents($tokenPath."/data.json");
+$currentDataArray = json_decode($currentData, true); // ! Used for other code too
+$lastLoginBefore = $currentDataArray['lastLogin']; // ! Save before change lastLogin
+$newDataArray = array_merge($currentDataArray, $dataToUpdate);
+$newDataJson = json_encode($newDataArray, JSON_PRETTY_PRINT);
+file_put_contents($tokenPath."/data.json", $newDataJson);
+
+
+
+
+
+
+
 
 function compareExpiration($a, $b)
 {
@@ -165,9 +187,30 @@ function getFirstCoupons($jsonFilePath, $number) {
         $coupon = $coupons[$i];
         $result[] = array(
             'name' => $coupon['name'],
-            'description' => $coupon['reward']['description']
+            'description' => $coupon['reward']['description'],
+            'type' => $coupon['reward']['type'],
+            'expiration' => $coupon['expiration']
         );
     }
 
     return $result;
+}
+
+
+
+
+
+
+
+
+function isDateFuture($dateString) {
+    $currentTime = time(); // Timestamp actuel
+    $inputTime = strtotime($dateString); // Timestamp de la date fournie
+    
+    // Comparaison des timestamps
+    if ($inputTime > $currentTime) {
+        return true; // La date est future
+    } else {
+        return false; // La date est passée ou égale à la date actuelle
+    }
 }
