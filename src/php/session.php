@@ -15,14 +15,12 @@ function tokenMaker($longueur = 18)
 }
 
 $today_date = date("Y m d");
-if ($_COOKIE['sms3_token'] != true) {
+if (!isset($_COOKIE['sms3_token'])) {
 
     $date_expiration = time() + (10 * 365 * 24 * 60 * 60);
     $token = uniqid() . '-' . tokenMaker();
     setcookie('sms3_token', $token, $date_expiration);
     mkdir('./data/account/' . $token);
-
-    header('Location: ./');
 
     $data = array(
         "username" => $username,
@@ -40,6 +38,7 @@ if ($_COOKIE['sms3_token'] != true) {
     file_put_contents("./data/account/$token/data.json", $json_data);
     file_put_contents("./data/account/$token/couponClaim.json", "[]");
 
+    header('Location: ./');
     exit;
 } else {
     setcookie('token', uniqid() . '_' . $_COOKIE['sms3_token'], $date_expiration);
