@@ -1,0 +1,13 @@
+// 375
+@media screen and (max-width: 375px) {
+    .total-couponUsed {
+        display: none;
+    }
+
+    .content .main-grid {
+        grid-template-areas:
+            "last-couponUsed last-couponUsed last-couponUsed last-couponUsed"
+            "last-coupon last-coupon last-coupon last-coupon"
+            "info info total total";
+    }
+}

@@ -1,5 +1,14 @@
 [
     {
+        "name": "GOBOOMERANG",
+        "expiration": "2024-04-05",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
         "name": "HARUHARU24",
         "expiration": "2024-04-10",
         "reward": {

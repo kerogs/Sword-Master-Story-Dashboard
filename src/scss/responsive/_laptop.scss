@@ -1,0 +1,104 @@
+// 1440
+@media screen and (max-width: 1440px) {
+    .last-coupon {
+        ul {
+            overflow-x: hidden !important;
+        }
+    }
+
+    .content .main-grid .total-couponNotClaim {
+        display: none !important;
+    }
+
+    .content .main-grid {
+        grid-template-areas:
+            "last-coupon last-coupon last-couponUsed total-couponUsed"
+            "last-coupon last-coupon last-update last-update"
+            "info info total total";
+    }
+
+    .last-couponUsed .ccenter {
+        font-size: 1.3em !important;
+    }
+    .total-couponUsed .ccenter {
+        font-size: 1.3em !important;
+    }
+}
+
+// 1280
+@media screen and (max-width: 1280px) {
+    main {
+        width: 98vw;
+        height: 98vh;
+    }
+    .content .main-grid .last-update .ccenter p {
+        width: 150px !important;
+    }
+}
+
+// 1130
+@media screen and (max-width: 1130px) {
+    .content .main-grid .last-update .img img {
+        // max-width: 240px !important;
+        // opacity: 0.8 !important;
+        display: none;
+    }
+
+    .content .main-grid .last-update > .filter {
+        background: linear-gradient(80deg, #2c295370, #ffffff00);
+        backdrop-filter: blur(0px);
+    }
+
+    .content .main-grid .last-update:hover {
+        img {
+            max-height: 280px !important;
+            max-width: 250px !important;
+        }
+    }
+
+    .last-couponUsed .ccenter {
+        font-size: 1em !important;
+    }
+    .total-couponUsed .ccenter {
+        font-size: 1em !important;
+    }
+
+    .content .main-grid {
+        grid-template-areas:
+            "last-couponUsed last-couponUsed total-couponUsed total-couponUsed"
+            "last-coupon last-coupon last-update last-update"
+            "info info total total";
+    }
+    .content .main-grid .last-update .img img {
+        display: none;
+    }
+
+    .content .main-grid .last-update .ccenter h3{
+        color: $accent;
+        font-weight: bold;
+    }
+
+    .content .main-grid .last-update .ccenter p {
+        width: 95% !important;
+        color: #000 !important;
+        font-weight: bold;
+    }
+
+    .last-couponUsed .ccenter {
+        font-size: 2em !important;
+    }
+    .total-couponUsed .ccenter {
+        font-size: 2em !important;
+    }
+}
+
+// 950px
+@media screen and (max-width: 950px) {
+    .content .main-grid .last-update .img img {
+        display: none;
+    }
+
+    .content .main-grid .last-update .ccenter p {
+        width: 95% !important;
+    }
+}

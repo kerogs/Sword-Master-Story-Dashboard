@@ -1,0 +1,71 @@
+//  768
+@media screen and (max-width: 768px) {
+    .content .main-grid {
+        grid-template-areas:
+            "last-couponUsed last-couponUsed total-couponUsed total-couponUsed"
+            "last-coupon last-coupon last-coupon last-coupon"
+            "info info total total";
+    }
+
+    .last-couponUsed .ccenter {
+        font-size: 1.3em !important;
+    }
+    .total-couponUsed .ccenter {
+        font-size: 1.3em !important;
+    }
+
+    .content .main-grid .last-update{
+        display: none;
+    }
+}
+
+// 678
+@media screen and (max-width: 678px){
+    .nav{
+        position: absolute !important;
+        height: 98vh !important;
+        transform: translateX(-160%) !important;
+        top: 0;
+        left: 0;
+    }
+
+    .navButton{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #333054;
+        z-index: 999;
+        width: 40px;
+        height: 40px;
+        border-radius: .4rem;
+        overflow: hidden;
+        transition: .5s;
+        svg{
+            fill:#fff;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .content{
+        margin: 0;
+    }
+
+    .nav.active{
+        width: 100%;
+        position: absolute !important;
+        transform: translateX(0) !important;
+        z-index: 998;
+        background-color: $background;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .navButton.active{
+        transform: rotate(180deg) !important;
+    }
+}

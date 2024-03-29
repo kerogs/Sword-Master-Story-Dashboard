@@ -39,13 +39,13 @@ $blue: #5066ca;
 
     &::-webkit-scrollbar {
         width: 6px;
-        background-color: transparent; 
+        background-color: transparent;
     }
 }
 
 body {
     background: $background;
-    background-image: url('../img/wallpaper-kerogs.png');
+    background-image: url("../img/wallpaper-kerogs.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,12 +56,14 @@ body {
 
 main {
     width: 80vw;
+    height: 80vh;
     // margin: 40px auto;
     display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.7s;
 }
 
 .ccenter {
@@ -77,6 +79,7 @@ main {
     padding: 20px;
     border-radius: 0.7rem;
     width: 219px;
+    transition: 0.4s;
 
     ul {
         padding-left: 0;
@@ -141,7 +144,7 @@ main {
     flex: 1;
     // background-color: red;
     margin: 0 0 0 20px;
-    height: 85vh;
+    // height: 85vh;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -199,7 +202,7 @@ main {
             .ccenter {
                 width: 100%;
                 text-align: center;
-                font-size: 2em;
+                font-size: 1.7em;
                 // color: $text;
                 color: $red;
                 cursor: default;
@@ -313,7 +316,7 @@ main {
             .ccenter {
                 width: 100%;
                 text-align: center;
-                font-size: 2em;
+                font-size: 1.7em;
                 // color: $text;
                 color: $green;
                 cursor: default;
@@ -503,5 +506,33 @@ main {
     }
 }
 
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    background
 
-@import './animation/animation';
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        text-align: center;
+    }
+
+    th {
+        background-color: $accent;
+    }
+
+    td{
+        background-color: #2e2a79;
+        color: #fff;
+    }
+}
+
+.navButton {
+    display: none;
+}
+
+// animation
+@import "./animation/animation";
+// Responsive
+@import "./responsive/laptop", "./responsive/tablet", "./responsive/mobile";

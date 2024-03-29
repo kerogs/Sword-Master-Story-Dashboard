@@ -63,7 +63,7 @@ if (file_exists($couponPath)) {
                     </div>
 
                     <div class="ccenter">
-                        <p><?= getLastCoupon("./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json")['name'] ?></p>
+                        <p id="lastClaim"><?= getLastCoupon("./data/account/" . $_COOKIE['sms3_token'] . "/couponClaim.json")['name'] ?></p>
                     </div>
                 </div>
                 <div class="last-coupon imp animation-popup">
@@ -173,10 +173,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             const numberClaimElement = document.getElementById('numberClaim');
                             const numberAvailableElement = document.getElementById('numberAvailable');
+                            const lastClaimElement = document.getElementById('lastClaim');
 
-                            if (numberClaimElement && numberAvailableElement) {
+                            if (numberClaimElement && numberAvailableElement && lastClaimElement) {
                                 numberClaimElement.textContent = parseInt(numberClaimElement.textContent) + 1;
                                 numberAvailableElement.textContent = parseInt(numberAvailableElement.textContent) - 1;
+                                lastClaimElement.textContent = couponName;
                             }
 
                             codeElements.forEach(function(element) {

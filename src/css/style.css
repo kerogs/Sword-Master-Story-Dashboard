@@ -30,11 +30,13 @@ body {
 
 main {
   width: 80vw;
+  height: 80vh;
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.7s;
 }
 
 .ccenter {
@@ -50,6 +52,7 @@ main {
   padding: 20px;
   border-radius: 0.7rem;
   width: 219px;
+  transition: 0.4s;
 }
 .nav ul {
   padding-left: 0;
@@ -102,7 +105,6 @@ main {
 .content {
   flex: 1;
   margin: 0 0 0 20px;
-  height: 85vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -151,7 +153,7 @@ main {
 .content .main-grid .last-couponUsed .ccenter {
   width: 100%;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.7em;
   color: #ca5050;
   cursor: default;
   transition: 0.4s;
@@ -242,7 +244,7 @@ main {
 .content .main-grid .total-couponUsed .ccenter {
   width: 100%;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.7em;
   color: #50ca5a;
   cursor: default;
   transition: 0.4s;
@@ -402,6 +404,28 @@ main {
   border-radius: 0.23rem;
 }
 
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.custom-table background th,
+.custom-table td {
+  padding: 8px;
+  text-align: left;
+  text-align: center;
+}
+.custom-table th {
+  background-color: #5650ca;
+}
+.custom-table td {
+  background-color: #2e2a79;
+  color: #fff;
+}
+
+.navButton {
+  display: none;
+}
+
 .animation-popup {
   animation: 1s popup forwards;
   opacity: 0;
@@ -470,5 +494,147 @@ main {
   }
   100% {
     background-size: 100%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .last-coupon ul {
+    overflow-x: hidden !important;
+  }
+  .content .main-grid .total-couponNotClaim {
+    display: none !important;
+  }
+  .content .main-grid {
+    grid-template-areas: "last-coupon last-coupon last-couponUsed total-couponUsed" "last-coupon last-coupon last-update last-update" "info info total total";
+  }
+  .last-couponUsed .ccenter {
+    font-size: 1.3em !important;
+  }
+  .total-couponUsed .ccenter {
+    font-size: 1.3em !important;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main {
+    width: 98vw;
+    height: 98vh;
+  }
+  .content .main-grid .last-update .ccenter p {
+    width: 150px !important;
+  }
+}
+@media screen and (max-width: 1130px) {
+  .content .main-grid .last-update .img img {
+    display: none;
+  }
+  .content .main-grid .last-update > .filter {
+    background: linear-gradient(80deg, rgba(44, 41, 83, 0.4392156863), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(0px);
+  }
+  .content .main-grid .last-update:hover img {
+    max-height: 280px !important;
+    max-width: 250px !important;
+  }
+  .last-couponUsed .ccenter {
+    font-size: 1em !important;
+  }
+  .total-couponUsed .ccenter {
+    font-size: 1em !important;
+  }
+  .content .main-grid {
+    grid-template-areas: "last-couponUsed last-couponUsed total-couponUsed total-couponUsed" "last-coupon last-coupon last-update last-update" "info info total total";
+  }
+  .content .main-grid .last-update .img img {
+    display: none;
+  }
+  .content .main-grid .last-update .ccenter h3 {
+    color: #5650ca;
+    font-weight: bold;
+  }
+  .content .main-grid .last-update .ccenter p {
+    width: 95% !important;
+    color: #000 !important;
+    font-weight: bold;
+  }
+  .last-couponUsed .ccenter {
+    font-size: 2em !important;
+  }
+  .total-couponUsed .ccenter {
+    font-size: 2em !important;
+  }
+}
+@media screen and (max-width: 950px) {
+  .content .main-grid .last-update .img img {
+    display: none;
+  }
+  .content .main-grid .last-update .ccenter p {
+    width: 95% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content .main-grid {
+    grid-template-areas: "last-couponUsed last-couponUsed total-couponUsed total-couponUsed" "last-coupon last-coupon last-coupon last-coupon" "info info total total";
+  }
+  .last-couponUsed .ccenter {
+    font-size: 1.3em !important;
+  }
+  .total-couponUsed .ccenter {
+    font-size: 1.3em !important;
+  }
+  .content .main-grid .last-update {
+    display: none;
+  }
+}
+@media screen and (max-width: 678px) {
+  .nav {
+    position: absolute !important;
+    height: 98vh !important;
+    transform: translateX(-160%) !important;
+    top: 0;
+    left: 0;
+  }
+  .navButton {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333054;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .navButton svg {
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .content {
+    margin: 0;
+  }
+  .nav.active {
+    width: 100%;
+    position: absolute !important;
+    transform: translateX(0) !important;
+    z-index: 998;
+    background-color: #0c0b19;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  .navButton.active {
+    transform: rotate(180deg) !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .total-couponUsed {
+    display: none;
+  }
+  .content .main-grid {
+    grid-template-areas: "last-couponUsed last-couponUsed last-couponUsed last-couponUsed" "last-coupon last-coupon last-coupon last-coupon" "info info total total";
   }
 }/*# sourceMappingURL=style.css.map */
