@@ -1,3 +1,9 @@
+@media screen and (max-width: 425px) {
+    .custom-table td:nth-child(3), .custom-table th:nth-child(3){
+        display: none !important;
+    }
+}
+
 // 375
 @media screen and (max-width: 375px) {
     .total-couponUsed {
@@ -9,5 +15,8 @@
             "last-couponUsed last-couponUsed last-couponUsed last-couponUsed"
             "last-coupon last-coupon last-coupon last-coupon"
             "info info total total";
+    }
+    .custom-table td svg{
+        display: none !important;
     }
 }

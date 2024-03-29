@@ -7,7 +7,7 @@ if (file_exists($couponPath)) {
     $lastModified = filemtime($couponPath);
     $currentTime = time();
     $difference = $currentTime - $lastModified;
-    if ($difference < 900) {
+    if ($difference < 1200) {
         // echo "Les informations ont été récupérées il y a moins de 15 minutes. Pas besoin de les récupérer à nouveau.";
     } else {
         require_once './src/php/update/coupons-checker.php';

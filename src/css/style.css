@@ -407,8 +407,9 @@ main {
 .custom-table {
   width: 100%;
   border-collapse: collapse;
+  color: #fff;
 }
-.custom-table background th,
+.custom-table th,
 .custom-table td {
   padding: 8px;
   text-align: left;
@@ -417,9 +418,33 @@ main {
 .custom-table th {
   background-color: #5650ca;
 }
-.custom-table td {
-  background-color: #2e2a79;
-  color: #fff;
+.custom-table tr:hover td {
+  background-color: #21294d !important;
+}
+.custom-table td.t-claim {
+  background-color: #191840;
+  text-decoration: line-through;
+  color: #6d6d6d !important;
+}
+.custom-table td.t-available {
+  background-color: #2e2a78;
+}
+.custom-table td.t-expiration {
+  background-color: #13112e;
+  text-decoration: line-through;
+  color: #471919 !important;
+}
+.custom-table td.t-ruby {
+  color: #ca5050;
+  fill: #ca5050;
+}
+.custom-table td.t-stamina {
+  color: yellow;
+  fill: yellow;
+}
+.custom-table td.t-other {
+  color: #5650ca;
+  fill: #5650ca;
 }
 
 .navButton {
@@ -630,11 +655,19 @@ main {
     transform: rotate(180deg) !important;
   }
 }
+@media screen and (max-width: 425px) {
+  .custom-table td:nth-child(3), .custom-table th:nth-child(3) {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 375px) {
   .total-couponUsed {
     display: none;
   }
   .content .main-grid {
     grid-template-areas: "last-couponUsed last-couponUsed last-couponUsed last-couponUsed" "last-coupon last-coupon last-coupon last-coupon" "info info total total";
+  }
+  .custom-table td svg {
+    display: none !important;
   }
 }/*# sourceMappingURL=style.css.map */

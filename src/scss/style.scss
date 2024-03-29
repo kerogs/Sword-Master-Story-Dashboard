@@ -509,7 +509,7 @@ main {
 .custom-table {
     width: 100%;
     border-collapse: collapse;
-    background
+    color: #fff;
 
     th,
     td {
@@ -522,9 +522,38 @@ main {
         background-color: $accent;
     }
 
+    tr:hover td{
+        background-color: #21294d !important;
+    }
+
     td{
-        background-color: #2e2a79;
-        color: #fff;
+
+        &.t-claim{
+            background-color: #191840;
+            text-decoration:line-through;
+            color: #6d6d6d !important;
+        }
+        &.t-available{
+            background-color: #2e2a78;
+        }
+        &.t-expiration{
+            background-color: #13112e;
+            text-decoration:line-through;
+            color: #471919 !important;
+        }
+
+        &.t-ruby{
+            color: $red;
+            fill:$red;
+        }
+        &.t-stamina{
+            color: yellow;
+            fill:yellow;
+        }
+        &.t-other{
+            color: $accent;
+            fill: $accent;
+        }
     }
 }
 

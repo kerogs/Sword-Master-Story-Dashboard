@@ -1,5 +1,23 @@
 [
     {
+        "name": "APRIL24",
+        "expiration": "2024-04-30",
+        "reward": {
+            "description": "x401 Stamina",
+            "value": 401,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "FOOL24",
+        "expiration": "2024-04-30",
+        "reward": {
+            "description": "x401 Stamina",
+            "value": 401,
+            "type": "Stamina"
+        }
+    },
+    {
         "name": "GOBOOMERANG",
         "expiration": "2024-04-05",
         "reward": {

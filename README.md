@@ -20,8 +20,6 @@ The site updates automatically to retrieve the latest available coupons.
 ## ✒️ What can I do with the site?
 I made the site for fun. You can deploy it wherever you want, I'm not responsible for what you do with it.
 
-Nevertheless I forbid the redistribution of this site. 
-
 ## 💬 How can I make a request or speak to someone?
 If you'd like to make a request to add anything to it, you can do so directly from github or from [my discord server](https://discord.gg/2HGYSAjsWy).
 
@@ -30,3 +28,20 @@ Here you can find some useful links related to Sword Master Story
 
 - [SMS Reddit](https://www.reddit.com/r/SwordMaster_Story/)
 - [Character SMS](https://meowdb.com/all-character-art-sword-master-story/)
+
+## 📒 TODO List
+> List of future site additions
+
+### Already added
+✅ Site size adapted to all screens
+✅ Redo list of coupons
+✅ Real-time change of LastClaim and LastAvailable, TotalClaim and TotalAvailable values when retrieving codes
+✅ Retrieve coupons automatically and display them for reclamation
+✅ Show the difference between available, recovered and expired coupons
+
+### To do
+❎ Allow list to be sent to discord from webhooks (action to be activated manually)
+❎ Synchronize lists between different comtpe (to have the same thing on different devices)
+❎ Enable the site to send information automatically on request (action to be activated manually)
+❎ Copy automatically when a code is clicked
+❎ Add an automatic site update function from the settings page
