@@ -1,7 +1,5 @@
 # Sword Master Story 3 Dashboard
-
-(The site is still under construction. but works !).
-
+The site doesn't store anything in a database, everything is in local files.
 <p align="center"> <img src="./src/preview/1-1-5-beta.gif" alt="gif 1.1.5-beta"> </p>
 
 
