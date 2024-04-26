@@ -451,6 +451,65 @@ main {
   display: none;
 }
 
+.settings {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 0.75rem;
+  margin: 0 10px;
+  padding: 10px;
+  color: #e7e7f3;
+  transition: 0.3s;
+  width: 100%;
+  overflow-y: auto;
+}
+.settings .codelist {
+  height: 100px;
+  overflow-y: auto;
+  background-color: #0c0c18;
+  margin: 15px 0;
+  border-radius: 0.23rem;
+  padding: 10px;
+}
+.settings .flex {
+  display: flex;
+}
+.settings .flex input, .settings .flex select {
+  flex: 1;
+  margin: 0 10px;
+}
+.settings .flex select {
+  padding: 5px;
+  border-radius: 0.23rem;
+  border: none;
+  outline: none;
+  background-color: #0c0b19;
+  color: #e7e7f3;
+}
+.settings .flex input[type=text],
+.settings .flex input[type=number],
+.settings .flex input[type=url] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 0.23rem;
+  border: none;
+  outline: none;
+  background-color: #0c0b19;
+  color: #e7e7f3;
+}
+.settings .flex input[type=submit] {
+  background-color: #5650ca;
+  color: #fff;
+  border-radius: 0.23rem;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.settings .flex input[type=submit]:hover {
+  background-color: #2e2a79;
+  opacity: 0.8;
+}
+
 .animation-popup {
   animation: 1s popup forwards;
   opacity: 0;

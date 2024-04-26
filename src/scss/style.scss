@@ -561,6 +561,72 @@ main {
     display: none;
 }
 
+.settings{
+    background-color: $backgroundalt;
+    border-radius: 0.75rem;
+    margin: 0 10px;
+    padding: 10px;
+    color: $text;
+    transition: 0.3s;
+    width: 100%;
+    overflow-y: auto;
+
+    .codelist{
+        height: 100px;
+        overflow-y: auto;
+        background-color: #0c0c18;
+        margin: 15px 0;
+        border-radius: 0.23rem;
+        padding: 10px;
+    }
+
+    .flex{
+        display: flex;
+
+        input, select{
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        select{
+            padding: 5px;
+            border-radius: 0.23rem;
+            border: none;
+            outline: none;
+            background-color: $background;
+            color: $text;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="url"]{
+            width: 100%;
+            padding: 5px;
+            border-radius: 0.23rem;
+            border: none;
+            outline: none;
+            background-color: $background;
+            color: $text;
+        }
+
+        input[type="submit"]{
+            background-color: $accent;
+            color: #fff;
+            border-radius: 0.23rem;
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover{
+                background-color: $secondary;
+                opacity: .8
+            }
+        }
+    }
+}
+
 // animation
 @import "./animation/animation";
 // Responsive

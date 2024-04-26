@@ -1,5 +1,68 @@
 [
     {
+        "name": "BOORISNEWPET",
+        "expiration": "2024-05-03",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SPRING243X",
+        "expiration": "2024-05-06",
+        "reward": {
+            "description": "x500 Stamina",
+            "value": 500,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "DEMIGODERA",
+        "expiration": "2024-04-26",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "NURSELAVILIN",
+        "expiration": "2024-04-19",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "LUNA24SOON",
+        "expiration": "2024-04-30",
+        "reward": {
+            "description": "x500 Ruby",
+            "value": 500,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SMSFOXHARU",
+        "expiration": "2024-04-12",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "LOVEAIRI",
+        "expiration": "2024-04-25",
+        "reward": {
+            "description": "x400 Ruby",
+            "value": 400,
+            "type": "Ruby"
+        }
+    },
+    {
         "name": "APRIL24",
         "expiration": "2024-04-30",
         "reward": {

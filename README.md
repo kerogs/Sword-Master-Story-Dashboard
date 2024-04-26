@@ -32,16 +32,12 @@ Here you can find some useful links related to Sword Master Story
 ## 📒 TODO List
 > List of future site additions
 
-### Already added
-✅ Site size adapted to all screens
-✅ Redo list of coupons
-✅ Real-time change of LastClaim and LastAvailable, TotalClaim and TotalAvailable values when retrieving codes
-✅ Retrieve coupons automatically and display them for reclamation
-✅ Show the difference between available, recovered and expired coupons
-
-### To do
-❎ Allow list to be sent to discord from webhooks (action to be activated manually)
-❎ Synchronize lists between different comtpe (to have the same thing on different devices)
-❎ Enable the site to send information automatically on request (action to be activated manually)
-❎ Copy automatically when a code is clicked
-❎ Add an automatic site update function from the settings page
+- [x] responsive
+- [x] Real-time change of LastClaim and LastAvailable, TotalClaim and TotalAvailable values when retrieving codes
+- [x] Retrieve coupons automatically and display them for reclamation
+- [x] Show the difference between available, recovered and expired coupons
+- [x] Allow list to be sent to discord from webhooks (action to be activated manually)
+- [ ] Synchronize lists between different account (to have the same thing on different devices)
+- [ ] Enable the site to send information automatically on request (need to be enable) (like a logs send to discord channel)
+- [ ] Copy automatically when a code is clicked
+- [ ] Add an automatic site update from the settings page

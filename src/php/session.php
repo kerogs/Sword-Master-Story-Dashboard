@@ -41,6 +41,7 @@ if (!isset($_COOKIE['sms3_token'])) {
     header('Location: ./');
     exit;
 } else {
+    $date_expiration = time() + (10 * 365 * 24 * 60 * 60);
     setcookie('token', uniqid() . '_' . $_COOKIE['sms3_token'], $date_expiration);
 }
 
@@ -63,12 +64,6 @@ $lastLoginBefore = $currentDataArray['lastLogin']; // ! Save before change lastL
 $newDataArray = array_merge($currentDataArray, $dataToUpdate);
 $newDataJson = json_encode($newDataArray, JSON_PRETTY_PRINT);
 file_put_contents($tokenPath."/data.json", $newDataJson);
-
-
-
-
-
-
 
 
 function compareExpiration($a, $b)
@@ -203,13 +198,44 @@ function getFirstCoupons($jsonFilePath, $number) {
 
 
 function isDateFuture($dateString) {
-    $currentTime = time(); // Timestamp actuel
-    $inputTime = strtotime($dateString); // Timestamp de la date fournie
+    $currentTime = time(); 
+    $inputTime = strtotime($dateString);
     
-    // Comparaison des timestamps
+
     if ($inputTime > $currentTime) {
         return true; // La date est future
     } else {
-        return false; // La date est passée ou égale à la date actuelle
+        return false; 
     }
+}
+
+function getRandomFiles($folder, $count, $formats = [], $fullPath = true) {
+    $files = scandir($folder);
+
+    $filteredFiles = [];
+    foreach ($files as $file) {
+        $ext = pathinfo($file, PATHINFO_EXTENSION);
+        if (in_array($ext, $formats) || empty($formats)) {
+            $filteredFiles[] = $folder . '/' . $file;
+        }
+    }
+
+    $totalFiles = count($filteredFiles);
+
+    if ($totalFiles === 0) {
+        return [];
+    }
+
+    if ($count === 1) {
+        $randomFile = $filteredFiles[array_rand($filteredFiles)];
+        return $fullPath ? [$randomFile] : [basename($randomFile)];
+    }
+
+    if ($count >= $totalFiles) {
+        return $fullPath ? $filteredFiles : array_map('basename', $filteredFiles);
+    }
+
+    shuffle($filteredFiles);
+    $selectedFiles = array_slice($filteredFiles, 0, $count);
+    return $fullPath ? $selectedFiles : array_map('basename', $selectedFiles);
 }
