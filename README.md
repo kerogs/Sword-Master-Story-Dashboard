@@ -1,7 +1,13 @@
 # Sword Master Story 3 Dashboard
 The site doesn't store anything in a database, everything is in local files.
-<p align="center"> <img src="./src/preview/1-1-5-beta.gif" alt="gif 1.1.5-beta"> </p>
-
+<center><h3>Dashboard Preview</h3></center>
+<p align="center"> 
+<img src="./src/preview/1-1-5-beta.gif" alt="gif 1.1.5-beta">
+</p>
+<center><h3>Discord Webhooks Preview</h3></center>
+<p align="center">
+<img src="./src/preview/webhooks.png" alt="preview discord webhooks"> 
+</p>
 
 ## 📖 About 
 This site is called SMS3-Dashboard and is an improved version of a small project I had done for myself. I decided to improve the interface and add some features to make it more interesting, and I decided to share it if anyone would like to use the little site for themselves or on a server of their own.
