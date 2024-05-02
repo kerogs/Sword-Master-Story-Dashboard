@@ -62,7 +62,7 @@ if (isset($_POST['couponMode'])) {
         }
     }
 
-    if ($couponMode == 'available') {
+    if ($couponMode == 'unclaimed') {
         $msg['embeds'][0]['fields'][] = [
             "name" => "Available coupon",
             "value" => $availableCoupons,
@@ -70,7 +70,7 @@ if (isset($_POST['couponMode'])) {
         ];
     }
 
-    if ($couponMode == 'claimed') {
+    if ($couponMode == 'available') {
         $msg['embeds'][0]['fields'][] = [
             "name" => "Claimed coupon",
             "value" => $claimedCoupons,

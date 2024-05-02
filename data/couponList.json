@@ -1,5 +1,32 @@
 [
     {
+        "name": "LUNA24UP",
+        "expiration": "2024-05-12",
+        "reward": {
+            "description": "x800 Ruby",
+            "value": 800,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SMSANANKE",
+        "expiration": "2024-05-12",
+        "reward": {
+            "description": "x600 Ruby",
+            "value": 600,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "MAINLUNA",
+        "expiration": "2024-04-30",
+        "reward": {
+            "description": "x500 Ruby",
+            "value": 500,
+            "type": "Ruby"
+        }
+    },
+    {
         "name": "BOORISNEWPET",
         "expiration": "2024-05-03",
         "reward": {
