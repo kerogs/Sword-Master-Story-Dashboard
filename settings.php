@@ -53,10 +53,21 @@ require_once './src/php/session.php';
                         <option value="available">Claimed</option>
                         <option selected value="all">All</option>
                     </select>
-                    <input type="url" name="webhook_url" id="" placeholder="Webhooks_url" required>
+                    <input type="url" name="webhook_url" id="" list="webhook" placeholder="Webhook_url, webhook_url, webhook_url" value="<?= $_COOKIE['webhook_url'] ?>" required>
+                    <datalist id="webhook">
+                        <?php
+                        
+                        $webhookList = explode(',', str_replace(" ", "", $_COOKIE['webhook_url']));
+                        foreach($webhookList as $webhook){
+                            echo '<option value="'.basename($webhook).'"></option>';
+                        }
+
+                        ?>
+                    </datalist>
                     <input type="submit" value="Send">
                 </div>
             </form>
+            <blockquote>If you want to use several webhooks at the same time, you can separate the links with a ",". Note that a delay of 1s is set for each webhook.</blockquote>
         </div>
 
     </main>

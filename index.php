@@ -9,8 +9,10 @@ if (file_exists($couponPath)) {
     $difference = $currentTime - $lastModified;
     if ($difference < 1200) {
         // echo "Les informations ont été récupérées il y a moins de 15 minutes. Pas besoin de les récupérer à nouveau.";
+        $updateStatus = "LastUpdate<15min";
     } else {
         require_once './src/php/update/coupons-checker.php';
+        $updateStatus = "Updated";
     }
 
     $lastCoupon = extractCoupons('./data/couponList.json', 1, true);
@@ -43,7 +45,7 @@ if (file_exists($couponPath)) {
 
 <body class="animation-background">
 
-    <div class="playerToken"><?= $_COOKIE['sms3_token'] ?></div>
+    <div class="playerToken"><?= $updateStatus ?> // <?= $_COOKIE['sms3_token'] ?></div>
 
     <main>
 

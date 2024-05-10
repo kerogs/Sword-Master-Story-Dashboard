@@ -1,0 +1,12 @@
+{
+    "username": null,
+    "totalcouponClaim": 0,
+    "lastClaim": "N\/A",
+    "lastLogin": "2024-May-10 23:31:33",
+    "couponClaim": [],
+    "theme": {
+        "style": "dark",
+        "bannerCharacter": "default.png",
+        "bannerBackground": "default.png"
+    }
+}

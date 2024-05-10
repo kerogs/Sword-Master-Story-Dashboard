@@ -1,5 +1,32 @@
 [
     {
+        "name": "AIRSHIPIDOL",
+        "expiration": "2024-05-17",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "HARUCAPTURE",
+        "expiration": "2024-05-27",
+        "reward": {
+            "description": "x500 Ruby",
+            "value": 500,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "ARCHMAGE2024",
+        "expiration": "2024-05-10",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
         "name": "LUNA24UP",
         "expiration": "2024-05-12",
         "reward": {
