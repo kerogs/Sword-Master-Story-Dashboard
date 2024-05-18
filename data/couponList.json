@@ -1,5 +1,68 @@
 [
     {
+        "name": "ARCHMAGEGOGO",
+        "expiration": "2024-05-24",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "DISCORD80K",
+        "expiration": "2024-08-31",
+        "reward": {
+            "description": "x1000 Ruby",
+            "value": 1000,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SMS240408BB",
+        "expiration": "2024-05-26",
+        "reward": {
+            "description": "x500 Ruby",
+            "value": 500,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SPRING3X01",
+        "expiration": "2024-06-03",
+        "reward": {
+            "description": "x300 Stamina",
+            "value": 300,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "SPRING3X02",
+        "expiration": "2024-06-03",
+        "reward": {
+            "description": "x300 Stamina",
+            "value": 300,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "SPRING3X03",
+        "expiration": "2024-06-03",
+        "reward": {
+            "description": "x300 Stamina",
+            "value": 300,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "MIYU24SOON",
+        "expiration": "2024-05-28",
+        "reward": {
+            "description": "x500 Ruby",
+            "value": 500,
+            "type": "Ruby"
+        }
+    },
+    {
         "name": "AIRSHIPIDOL",
         "expiration": "2024-05-17",
         "reward": {

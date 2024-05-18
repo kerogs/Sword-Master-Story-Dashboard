@@ -335,6 +335,9 @@ main {
   color: #e7e7f3;
   opacity: 0.2;
 }
+.playerToken span {
+  opacity: 1;
+}
 
 .claimed {
   opacity: 0.2 !important;

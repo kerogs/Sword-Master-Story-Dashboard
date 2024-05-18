@@ -7,12 +7,11 @@ if (file_exists($couponPath)) {
     $lastModified = filemtime($couponPath);
     $currentTime = time();
     $difference = $currentTime - $lastModified;
-    if ($difference < 1200) {
-        // echo "Les informations ont été récupérées il y a moins de 15 minutes. Pas besoin de les récupérer à nouveau.";
+    if ($difference < 12) {
         $updateStatus = "LastUpdate<15min";
     } else {
         require_once './src/php/update/coupons-checker.php';
-        $updateStatus = "Updated";
+        $updateStatus = "<span style='color:#50ca5a;'>Updated</span>";
     }
 
     $lastCoupon = extractCoupons('./data/couponList.json', 1, true);

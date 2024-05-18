@@ -426,6 +426,10 @@ main {
     right: 5px;
     color: $text;
     opacity: 0.2;
+
+    span{
+        opacity: 1;
+    }
 }
 
 .claimed {
