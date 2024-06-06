@@ -1,5 +1,86 @@
 [
     {
+        "name": "SPRING5X01",
+        "expiration": "2024-06-17",
+        "reward": {
+            "description": "x500 Stamina",
+            "value": 500,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "SPRING5X02",
+        "expiration": "2024-06-17",
+        "reward": {
+            "description": "x500 Stamina",
+            "value": 500,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "RHEASOON",
+        "expiration": "2024-06-25",
+        "reward": {
+            "description": "x500 Ruby",
+            "value": 500,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SPRING24GO",
+        "expiration": "2024-06-19",
+        "reward": {
+            "description": "x1000 Stamina",
+            "value": 1000,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "GOBATTLEMAGE",
+        "expiration": "2024-06-07",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SMSODIN",
+        "expiration": "2024-06-30",
+        "reward": {
+            "description": "x600 Ruby",
+            "value": 600,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "MIYUUPDATE",
+        "expiration": "2024-06-20",
+        "reward": {
+            "description": "x500 Ruby",
+            "value": 500,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "2024SUPERX4",
+        "expiration": "2024-05-31",
+        "reward": {
+            "description": "x700 Ruby",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SMSPLAYX4",
+        "expiration": "2024-05-26",
+        "reward": {
+            "description": "x1000 Stamina",
+            "value": 1000,
+            "type": "Stamina"
+        }
+    },
+    {
         "name": "ARCHMAGEGOGO",
         "expiration": "2024-05-24",
         "reward": {

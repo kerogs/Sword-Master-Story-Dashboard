@@ -8,7 +8,11 @@ if (isset($_POST['couponMode'])) {
 
     // ? save $_POST['webhook_url'] in a cookie for 60 days
     setcookie('webhook_url', $_POST['webhook_url'], time() + (60 * 60 * 24 * 60));
-    
+
+    // ? add webhook to data.json
+    $dataJSON = json_decode(file_get_contents($tokenPath.'/data.json'), true);
+    $dataJSON['webhook'] = $_POST['webhook_url'];
+    file_put_contents($tokenPath.'/data.json', json_encode($dataJSON, JSON_PRETTY_PRINT));
 
     $couponMode = $_POST['couponMode'];
     // $webhook_url = $_POST['webhook_url'];

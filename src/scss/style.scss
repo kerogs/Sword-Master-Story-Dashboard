@@ -55,8 +55,8 @@ body {
 }
 
 main {
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     // margin: 40px auto;
     display: flex;
     position: absolute;
@@ -64,6 +64,7 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.7s;
+    overflow: hidden;
 }
 
 .ccenter {
