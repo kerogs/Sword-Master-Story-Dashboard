@@ -22,10 +22,15 @@
 </p>
 
 <!-- IMPORTANT -->
-# Important Announcement: Project Deprecation and Update
+# Important Announcement
+
+> [!NOTE]
+> If any issues arise with coupon retrieval, please configure the User-Agent setting in the PHP script in ``src/php/update/coupons-checker.php`` , as this is only a temporary solution to bypass certain protections.
 
 > [!IMPORTANT]
-> The Sword Master Story Dashboard is no longer functioning correctly, as the PHP script is unable to retrieve coupons from the website. Unfortunately, this means the service is currently unavailable. <br><br> However, I am working on a new version of the website (v2), which will be available in a separate repository. You can access the new project here: [SMSDv2](https://github.com/kerogs/SMSDv2). <br><br> Thank you for your understanding, and I appreciate your continued support!
+> I am actively working on a new version of the Sword Master Story Dashboard (v2), which will be available in a separate repository. You can follow the progress here: [SMSDv2](https://github.com/kerogs/SMSDv2). <br><br> Thank you for your support and understanding as I work to improve the platform!
+
+
 
 <hr>
 
@@ -40,7 +45,6 @@
 > - [📦 Features](#-features)
 > - [🚀 Getting Started](#-getting-started)
 >   - [⚙️ Installation](#️-installation)
-> - [🛠 Project Roadmap](#-project-roadmap)
 > - [🤝 Contributing](#-contributing)
 > - [📄 License](#-license)
 
@@ -68,17 +72,6 @@ git clone https://github.com/kerogs/Sword-Master-Story-Dashboard
 ```
 
 2. You can now host the site on a server or on your own machine with a tool such as xamp, wam, mamp, ...
-
-## 🛠 Project Roadmap
-- [x] responsive
-- [x] Real-time change of LastClaim and LastAvailable, TotalClaim and TotalAvailable values when retrieving codes
-- [x] Retrieve coupons automatically and display them for reclamation
-- [x] Show the difference between available, recovered and expired coupons
-- [x] Allow list to be sent to discord from webhooks (action to be activated manually)
-- [ ] Synchronize lists between different account (to have the same thing on different devices)
-- [ ] Enable the site to send information automatically on request (need to be enable) (like a logs send to discord channel)
-- [ ] Copy automatically when a code is clicked
-- [ ] Add an automatic site update from the settings page
 
 ## 🤝 Contributing
 
