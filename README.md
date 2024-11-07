@@ -21,6 +21,12 @@
 <img alt="Static Badge" src="https://img.shields.io/badge/SCSS-%23CC6699?style=for-the-badge&logo=sass&logoColor=ffffff">
 </p>
 
+
+<!-- IMPORTANT -->
+# Important Announcement: Project Deprecation and Update
+
+> [!IMPORTANT]
+> The Sword Master Story Dashboard is no longer functioning correctly, as the PHP script is unable to retrieve coupons from the website. Unfortunately, this means the service is currently unavailable. <br><br> However, I am working on a new version of the website (v2), which will be available in a separate repository. You can access the new project here: [SMSDv2](https://github.com/kerogs/SMSDv2). <br><br> Thank you for your understanding, and I appreciate your continued support!
 <hr>
 
 <center><h3>Dashboard Preview</h3></center>
