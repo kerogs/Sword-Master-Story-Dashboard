@@ -14,6 +14,10 @@ function tokenMaker($longueur = 18)
     return $token;
 }
 
+if(!file_exists('./data/account/'.$_COOKIE['sms3_token'].'/data.json')){
+    $_COOKIE['sms3_token'] = '';
+}
+
 $today_date = date("Y m d");
 if (!isset($_COOKIE['sms3_token'])) {
 
