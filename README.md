@@ -73,6 +73,11 @@ git clone https://github.com/kerogs/Sword-Master-Story-Dashboard
 
 2. You can now host the site on a server or on your own machine with a tool such as xamp, wam, mamp, ...
 
+### Docker build && run
+```sh
+docker compose up --build
+```
+
 ## 🤝 Contributing
 
 Contributions are welcome! Here are several ways you can contribute:

@@ -1,5 +1,41 @@
 [
     {
+        "name": "CROWNSAGA11",
+        "expiration": "2024-11-22",
+        "reward": {
+            "description": "Ruby x700",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "QUIZSMSBD",
+        "expiration": "2024-12-10",
+        "reward": {
+            "description": "Stamina x1000",
+            "value": 1000,
+            "type": "Stamina"
+        }
+    },
+    {
+        "name": "BOO4U2024",
+        "expiration": "2025-01-10",
+        "reward": {
+            "description": "Ruby x600",
+            "value": 600,
+            "type": "Ruby"
+        }
+    },
+    {
+        "name": "SMSSELENE",
+        "expiration": "2024-11-15",
+        "reward": {
+            "description": "Ruby x700",
+            "value": 700,
+            "type": "Ruby"
+        }
+    },
+    {
         "name": "IPDONG01",
         "expiration": "2025-02-03",
         "reward": {
