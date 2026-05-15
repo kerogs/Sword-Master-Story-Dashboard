@@ -27,11 +27,6 @@
 > [!NOTE]
 > If any issues arise with coupon retrieval, please configure the User-Agent setting in the PHP script in ``src/php/update/coupons-checker.php`` , as this is only a temporary solution to bypass certain protections.
 
-> [!IMPORTANT]
-> I am actively working on a new version of the Sword Master Story Dashboard (v2), which will be available in a separate repository. You can follow the progress here: [SMSDv2](https://github.com/kerogs/SMSDv2). <br><br> Thank you for your support and understanding as I work to improve the platform!
-
-
-
 <hr>
 
 <center><h3>Dashboard Preview</h3></center>
